@@ -27,7 +27,7 @@ import java.time.Instant;
  * public boolean isInterrupted(): tests if the thread has been interrupted.
  * public static boolean interrupted(): tests if the current thread has been interrupted.
  */
-public class Main {
+public class ThreadMain {
     public static void main(String... args) {
         // NOTES:
         // Q: Differences between "extending" and "implementing" Threads?
