@@ -1,6 +1,7 @@
 package santosh.array;
 
-import java.time.Instant;
+import santosh.utils.CommonUtils;
+
 import java.util.Arrays;
 
 /**
@@ -43,42 +44,42 @@ import java.util.Arrays;
  */
 public class ArrayMain {
     public static void main(String... args) {
-        print("LeetCode Program - 88. Merge Sorted Array");
+        CommonUtils.print("LeetCode Program - 88. Merge Sorted Array");
         case1();
         case2();
         case3();
     }
 
     private static void case1() {
-        print("Case 1: " + "nums1 = [1,2,3,0,0,0], m = 3, nums2 = [2,5,6], n = 3");
+        CommonUtils.print("Case 1: " + "nums1 = [1,2,3,0,0,0], m = 3, nums2 = [2,5,6], n = 3");
         // nums1 = [1,2,3,0,0,0], m = 3, nums2 = [2,5,6], n = 3
         int[] nums1 = {1, 2, 3, 0, 0, 0};
         int m = 3;
         int[] nums2 = {2, 5, 6};
         int n = 3;
         merge(nums1, m, nums2, n);
-        print(Arrays.toString(nums1));
+        CommonUtils.print(Arrays.toString(nums1));
     }
 
     private static void case2() {
-        print("Case 2: " + "nums1 = [1], m = 1, nums2 = [], n = 0");
+        CommonUtils.print("Case 2: " + "nums1 = [1], m = 1, nums2 = [], n = 0");
         // nums1 = [1], m = 1, nums2 = [], n = 0
         int[] nums1 = {1};
         int m = 1;
         int[] nums2 = {};
         int n = 0;
         merge(nums1, m, nums2, n);
-        print(Arrays.toString(nums1));
+        CommonUtils.print(Arrays.toString(nums1));
     }
 
     private static void case3() {
-        print("Case 3: " + "nums1 = [0], m = 0, nums2 = [1], n = 1");
+        CommonUtils.print("Case 3: " + "nums1 = [0], m = 0, nums2 = [1], n = 1");
         int[] nums1 = {0};
         int m = 0;
         int[] nums2 = {1};
         int n = 1;
         merge(nums1, m, nums2, n);
-        print(Arrays.toString(nums1));
+        CommonUtils.print(Arrays.toString(nums1));
     }
 
     /**
@@ -91,14 +92,10 @@ public class ArrayMain {
      */
     private static void merge(int[] nums1, int m, int[] nums2, int n) {
         for (int a2 = (n - 1), a1 = (m + n) - 1; a2 >= 0; a2--, a1--) {
-            // print("nums1[" + a1 + "] = " + nums1[a1]);
-            // print("nums2[" + a2 + "] = " + nums2[a2]);
+            // CommonUtils.print("nums1[" + a1 + "] = " + nums1[a1]);
+            // CommonUtils.print("nums2[" + a2 + "] = " + nums2[a2]);
             nums1[a1] = nums2[a2];
         }
         Arrays.sort(nums1);
-    }
-
-    private static void print(String value) {
-        System.out.println("Time: " + Instant.now() + " Output: " + value);
     }
 }

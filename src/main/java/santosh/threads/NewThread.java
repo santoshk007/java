@@ -1,5 +1,7 @@
 package santosh.threads;
 
+import santosh.utils.CommonUtils;
+
 import java.time.Instant;
 
 /**
@@ -9,10 +11,6 @@ public class NewThread extends Thread {
 
     @Override
     public void run() {
-        print("NewThread class thread run method called");
-    }
-
-    private void print(String value) {
-        System.out.println("Time: " + Instant.now() + " Output: " + value);
+        CommonUtils.print("NewThread class thread run method called");
     }
 }

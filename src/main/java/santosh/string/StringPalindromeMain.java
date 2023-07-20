@@ -1,6 +1,7 @@
 package santosh.string;
 
-import java.time.Instant;
+import santosh.utils.CommonUtils;
+import santosh.utils.StringUtils;
 
 /**
  * A phrase is a palindrome if, after converting all uppercase letters into lowercase letters and removing all non-alphanumeric characters, it reads the same forward and backward. Alphanumeric characters include letters and numbers.
@@ -33,7 +34,7 @@ import java.time.Instant;
  */
 public class StringPalindromeMain {
     public static void main(String... args) {
-        print("LeetCode Program - 125. Valid Palindrome");
+        CommonUtils.print("LeetCode Program - 125. Valid Palindrome");
         case1();
         case2();
         case3();
@@ -41,30 +42,19 @@ public class StringPalindromeMain {
 
     private static void case1() {
         String s = "A man, a plan, a canal: Panama";
-        print("Case 1 Original String: " + s);
-        print(" String s '" + s + "' is Palindrome: " + isPalindrome(s));
+        CommonUtils.print("Case 1 Original String: " + s);
+        CommonUtils.print(" String s '" + s + "' is Palindrome: " + StringUtils.isPalindrome(s));
     }
+
     private static void case2() {
         String s = "race a car";
-        print("Case 2 Original String: " + s);
-        print(" String s '" + s + "' is Palindrome: " + isPalindrome(s));
+        CommonUtils.print("Case 2 Original String: " + s);
+        CommonUtils.print(" String s '" + s + "' is Palindrome: " + StringUtils.isPalindrome(s));
     }
+
     private static void case3() {
         String s = " ";
-        print("Case 3 Original String: " + s);
-        print(" String s '" + s + "' is Palindrome: " + isPalindrome(s));
-    }
-
-    private static void print(String value) {
-        System.out.println("Time: " + Instant.now() + " Output: " + value);
-    }
-
-    private static boolean isPalindrome(String s) {
-        s = s.replaceAll("[^a-zA-Z0-9]", "");
-        print("Replaced String: " + s);
-        StringBuilder b = new StringBuilder();
-        String r = b.append(s).reverse().toString();
-        print("Reversed String: " + r);
-        return s.equalsIgnoreCase(r);
+        CommonUtils.print("Case 3 Original String: " + s);
+        CommonUtils.print(" String s '" + s + "' is Palindrome: " + StringUtils.isPalindrome(s));
     }
 }
