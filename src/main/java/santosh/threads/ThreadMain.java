@@ -1,6 +1,7 @@
 package santosh.threads;
 
-import java.time.Instant;
+import santosh.utils.CommonUtils;
+
 /**
  * Created: 13 July 2023
  * Commonly used Thread Methods:
@@ -50,7 +51,7 @@ public class ThreadMain {
     }
 
     private static void RunnableExample() {
-        print("Calling Runnable Example");
+        CommonUtils.print("Calling Runnable Example");
         var newRunnable = new NewRunnable();
         var thread = new Thread(newRunnable);
         thread.start();
@@ -64,17 +65,13 @@ public class ThreadMain {
         // has finished running before using any attributes that the thread can change.
         // thread.isAlive();
 
-        print("Runnable Example Done");
+        CommonUtils.print("Runnable Example Done");
     }
 
     private static void ThreadExample() {
-        print("Calling Thread Example");
+        CommonUtils.print("Calling Thread Example");
         var newThread = new NewThread();
         newThread.start();
-        print("Thread Example Done");
-    }
-
-    private static void print(String value) {
-        System.out.println("Time: " + Instant.now() + " Output: " + value);
+        CommonUtils.print("Thread Example Done");
     }
 }
